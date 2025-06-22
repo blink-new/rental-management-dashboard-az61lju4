@@ -24,7 +24,7 @@ export function Landing() {
       title: "Interface Maintenance",
       description: "Suivez les demandes de réparation et les interventions.",
       icon: <Wrench className="h-8 w-8 text-yellow-600" />,
-      link: '/maintenance-agent',
+      link: '/agent-entretien',
       color: 'from-yellow-400 to-yellow-600',
       hover: 'hover:ring-yellow-400',
     },

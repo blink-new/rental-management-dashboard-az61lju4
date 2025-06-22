@@ -1,13 +1,9 @@
 import { useLocation, Link } from 'react-router-dom'
 import {
   Home,
-  User,
-  FileText,
-  FolderOpen,
-  Wrench,
-  MessageSquare,
-  Settings,
   Building,
+  Calendar,
+  Bell,
 } from 'lucide-react'
 import {
   Sidebar,
@@ -26,39 +22,19 @@ import { Badge } from '../ui/badge'
 const menuItems = [
   {
     title: 'Tableau de bord',
-    url: '/locataire',
+    url: '/agent-entretien',
     icon: Home,
   },
   {
-    title: 'Mon Profil',
-    url: '/locataire/profile',
-    icon: User,
+    title: 'Mon Horaire',
+    url: '/agent-entretien/horaire',
+    icon: Calendar,
   },
   {
-    title: 'Mon Bail',
-    url: '/locataire/lease',
-    icon: FileText,
-  },
-  {
-    title: 'Documents',
-    url: '/locataire/documents',
-    icon: FolderOpen,
-  },
-  {
-    title: 'Maintenance',
-    url: '/locataire/maintenance',
-    icon: Wrench,
-  },
-  {
-    title: 'Messages',
-    url: '/locataire/messages',
-    icon: MessageSquare,
-    badge: 3,
-  },
-  {
-    title: 'Paramètres',
-    url: '/locataire/settings',
-    icon: Settings,
+    title: 'Notifications',
+    url: '/agent-entretien/notifications',
+    icon: Bell,
+    badge: 2,
   },
 ]
 
@@ -66,16 +42,13 @@ export function AppSidebar() {
   const location = useLocation()
 
   const isActive = (url: string) => {
-    if (url === '/locataire') {
-      return location.pathname === '/locataire' || location.pathname === '/locataire/'
-    }
-    return location.pathname.startsWith(url)
+    return location.pathname === url || location.pathname.startsWith(url + '/')
   }
 
   return (
     <Sidebar className="border-r bg-card">
       <SidebarHeader className="border-b p-4">
-        <Link to="/locataire" className="flex items-center gap-3">
+        <Link to="/agent-entretien" className="flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground">
             <Building className="h-5 w-5" />
           </div>
