@@ -3,7 +3,8 @@ import {
   Home,
   Building,
   Calendar,
-  Bell,
+  FileText,
+  MessageSquare,
 } from 'lucide-react'
 import {
   Sidebar,
@@ -22,19 +23,29 @@ import { Badge } from '../ui/badge'
 const menuItems = [
   {
     title: 'Tableau de bord',
-    url: '/agent-entretien',
+    url: '/locataire',
     icon: Home,
   },
   {
-    title: 'Mon Horaire',
-    url: '/agent-entretien/horaire',
+    title: 'Mon Profil',
+    url: '/locataire/profile',
+    icon: Building,
+  },
+  {
+    title: 'Mon Bail',
+    url: '/locataire/lease',
     icon: Calendar,
   },
   {
-    title: 'Notifications',
-    url: '/agent-entretien/notifications',
-    icon: Bell,
-    badge: 2,
+    title: 'Documents',
+    url: '/locataire/documents',
+    icon: FileText,
+  },
+  {
+    title: 'Messages',
+    url: '/locataire/messages',
+    icon: MessageSquare,
+    badge: 3,
   },
 ]
 
@@ -48,7 +59,7 @@ export function AppSidebar() {
   return (
     <Sidebar className="border-r bg-card">
       <SidebarHeader className="border-b p-4">
-        <Link to="/agent-entretien" className="flex items-center gap-3">
+        <Link to="/locataire" className="flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground">
             <Building className="h-5 w-5" />
           </div>

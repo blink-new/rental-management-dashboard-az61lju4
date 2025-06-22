@@ -9,7 +9,6 @@ import { Maintenance } from './pages/Maintenance'
 import { Messages } from './pages/Messages'
 import { Settings } from './pages/Settings'
 import { Landing } from './pages/Landing'
-import { MaintenanceAgentDashboard } from './pages/maintenance-agent/Dashboard'
 
 const TenantRoutes = () => (
   <SidebarProvider>
@@ -27,23 +26,12 @@ const TenantRoutes = () => (
   </SidebarProvider>
 )
 
-const MaintenanceAgentRoutes = () => (
-  <SidebarProvider>
-    <AppLayout>
-      <Routes>
-        <Route path="/" element={<MaintenanceAgentDashboard />} />
-      </Routes>
-    </AppLayout>
-  </SidebarProvider>
-)
-
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/locataire/*" element={<TenantRoutes />} />
-        <Route path="/agent-entretien/*" element={<MaintenanceAgentRoutes />} />
       </Routes>
     </Router>
   )
